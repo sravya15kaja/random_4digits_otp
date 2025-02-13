@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OTP Generator</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>OTP Generator</h1>
+        <div class="otp-display" id="otp-display">_ _ _ _</div>
+        <button onclick="generateOtp()">Generate OTP</button>
+        <div class="footer">Click the button to generate a 4-digit OTP.</div>
+    </div>
+    <script>
+        function generateOtp() {
+            let digits = '0123456789';
+            let otp = '';
+            let len = digits.length;
+            for (let i = 0; i < 4; i++) {
+                otp += digits[Math.floor(Math.random() * len)];
+            }
+            document.getElementById("otp-display").innerText = otp;
+        }
+    </script>
+</body>
+</html>
